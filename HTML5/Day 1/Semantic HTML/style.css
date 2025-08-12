@@ -1,0 +1,86 @@
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+        --navbar-height: 70px;
+        --prussian-blue: #012a4aff;
+        --indigo-dye: #013a63ff;
+        --indigo-dye-2: #01497cff;
+        --indigo-dye-3: #014f86ff;
+        --ucla-blue: #2a6f97ff;
+        --cerulean: #2c7da0ff;
+        --air-force-blue: #468fafff;
+        --air-superiority-blue: #61a5c2ff;
+        --sky-blue: #89c2d9ff;
+        --light-blue: #a9d6e5ff;
+}
+
+header {
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--indigo-dye);
+        color: white;
+        position: -webkit-sticky;
+        position: sticky;
+        height: var(--navbar-height);
+        align-items: center;
+        padding: 0 20px;
+}
+
+header a {
+        color: inherit;
+        text-decoration: none;
+}
+
+header .logo a {
+        font-size: 22px;
+}
+
+header nav a {
+        margin-left: 10px;
+}
+
+main {
+        height: calc(100vh - (2 * var(--navbar-height)));
+        background-color: var(--air-superiority-blue);
+        color: white;
+        display: flex;
+}
+
+main aside {
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+main .sections {
+        background-color: var(--sky-blue);
+        width: 60%;
+        padding: 15px;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 15px;
+}
+
+main .sections section {
+        border: 2px solid white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+footer {
+        background-color: var(--indigo-dye);
+        color: white;
+        text-align: center;
+        height: var(--navbar-height);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}

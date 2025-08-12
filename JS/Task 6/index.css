@@ -1,0 +1,160 @@
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+        display: flex;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 40px;
+}
+
+#load-btn {
+        background-color: #5d7525;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -ms-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+
+        &:hover {
+                background-color: white;
+                color: #5d7525;
+                border: 1px solid #5d7525;
+        }
+}
+
+.dropdown {
+        position: relative;
+        display: inline-block;
+
+        &:hover .dropdown-content {
+                display: block;
+        }
+
+        &:hover .dropbtn {
+                background-color: #be2677;
+        }
+
+        .dropbtn {
+                background-color: #be2677;
+                color: white;
+                padding: 10px;
+                border: none;
+                cursor: pointer;
+                width: 400px;
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                -ms-border-radius: 5px;
+                -o-border-radius: 5px;
+
+                &:disabled {
+                        cursor: not-allowed;
+                        background-color: #e39ec3;
+                }
+        }
+
+        .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+                margin-bottom: 40px;
+                transition: all .5s ease;
+                -webkit-transition: all .5s ease;
+                -moz-transition: all .5s ease;
+                -ms-transition: all .5s ease;
+                -o-transition: all .5s ease;
+        }
+
+        .dropdown-content .product-item {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: flex;
+                gap: 10px;
+                justify-content: space-between;
+                padding: 10px;
+
+                &:hover {
+                        background-color: #f1f1f1;
+                }
+
+                button {
+                        min-width: -webkit-max-content;
+                        min-width: -moz-max-content;
+                        min-width: max-content;
+                        padding: 5px 10px;
+                        background-color: #b3a837;
+                        color: white;
+                        border: none;
+                        cursor: pointer;
+                        height: 35px;
+                        transition: all .3s ease;
+                        -webkit-transition: all .3s ease;
+                        -moz-transition: all .3s ease;
+                        -ms-transition: all .3s ease;
+                        -o-transition: all .3s ease;
+                        border-radius: 5px;
+                        -webkit-border-radius: 5px;
+                        -moz-border-radius: 5px;
+                        -ms-border-radius: 5px;
+                        -o-border-radius: 5px;
+
+                        &:hover {
+                                background-color: white;
+                                color: #b3a837;
+                                border: 1px solid #b3a837;
+                        }
+                }
+        }
+}
+
+.product-card {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 500px;
+        padding: 30px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+
+        img {
+                width: 200px;
+        }
+
+        p {
+                line-clamp: 5;
+                -webkit-line-clamp: 5;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+        }
+}

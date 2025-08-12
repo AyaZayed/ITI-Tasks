@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Progress</title>
+      <link rel="stylesheet" href="./style.css" />
+   </head>
+   <body>
+      <div class="container">
+         <progress min="0" max="100" id="progress"></progress>
+         <strong id="progValue"></strong>
+      </div>
+      <script>
+         setInterval(function () {
+            progress.value++;
+            progValue.textContent = progress.value + "%";
+            if (progress.value === 100) {
+               progress.value = 0;
+            }
+         }, 100);
+      </script>
+   </body>
+</html>

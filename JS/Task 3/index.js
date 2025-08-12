@@ -124,6 +124,7 @@ console.log("**********************");
 function validateDate(date) {
         const pattern = /^\d{2}-\d{2}-\d{4}$/
         let isCorrect = pattern.test(date)
+        const dateArr = date.split("-")
 
         while (!isCorrect) {
                 alert("Wrong Date Format")
@@ -156,7 +157,7 @@ function calculateAge(date) {
                 years--;
                 months += 12;
         }
-        const age = `Your age is: ${years} years ${months} months and ${days} days`
+        const age = `Your age is: ${years} years ${months}  months and ${days} days`
         alert(age)
         return age
 }
@@ -191,12 +192,9 @@ function getDayName(dateString) {
         if (isNaN(date)) return "Invalid date";
 
         const options = { weekday: 'long' };
-        return date.toLocaleDateString('en-US', options);
+        return date.toLocaleDateString('en-UK', options);
 }
 
 let dateStr = new Date().toDateString()
 
 console.log("Today is: " + getDayName(dateStr))
-
-console.log("**********************");
-

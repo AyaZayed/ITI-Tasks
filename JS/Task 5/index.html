@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Todo List</title>
+      <link rel="stylesheet" href="./index.css" />
+      <!-- font awesome -->
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer" />
+   </head>
+   <body>
+      <h1>To Do Organizer</h1>
+      <form>
+         <input
+            type="text"
+            name="todo"
+            id="todo-input"
+            placeholder="Enter task name" />
+         <button type="submit" id="add-todo" disabled>Add</button>
+      </form>
+      <table class="todos-table">
+         <thead>
+            <tr>
+               <th>Done</th>
+               <th width="500">Task</th>
+               <th>Delete</th>
+            </tr>
+         </thead>
+         <tbody></tbody>
+      </table>
+      <button id="show-msg">Show Message</button>
+      <script src="./index.js"></script>
+   </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Range Form</title>
+      <link rel="stylesheet" href="./style.css" />
+   </head>
+   <body>
+      <form id="form">
+         <label for="first">First Name:</label>
+         <input type="text" id="first" name="first" placeholder="First" />
+         <label for="last">Last Name:</label>
+         <input type="text" id="last" name="last" placeholder="Last" />
+
+         <label for="red">Red:</label>
+         <input type="range" name="red" id="red" min="0" max="255" value="0" />
+         <label for="blue">Blue:</label>
+         <input
+            type="range"
+            name="blue"
+            id="blue"
+            min="0"
+            max="255"
+            value="0" />
+         <label for="green">Green:</label>
+         <input
+            type="range"
+            name="green"
+            id="green"
+            min="0"
+            max="255"
+            value="0" />
+
+         <p id="fullName"></p>
+         <input type="submit" value="Send Name" />
+      </form>
+      <script>
+         form.addEventListener("submit", (e) => {
+            e.preventDefault();
+         });
+
+         form.addEventListener("input", () => {
+            fullName.innerText = `${first.value} ${last.value}`;
+            fullName.style.color = `rgb(${red.value},${blue.value},${green.value})`;
+         });
+      </script>
+   </body>
+</html>

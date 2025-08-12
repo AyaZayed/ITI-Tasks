@@ -1,0 +1,128 @@
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+:root {
+        --purple: #432371;
+        --orange: #faad7a;
+        --faded-purple: #55354F;
+}
+
+body {
+        background: hsla(265, 53%, 29%, 1);
+        background: linear-gradient(to right, hsla(265, 53%, 29%, 1) 0%, hsla(24, 93%, 73%, 1) 100%);
+        background: -webkit-linear-gradient(to right, hsla(265, 53%, 29%, 1) 0%, hsla(24, 93%, 73%, 1) 100%);
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#432371", endColorstr="#FAAE7B", GradientType=1);
+
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+}
+
+.audio-player {
+        /* From https://css.glass */
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.302);
+        padding: 1rem;
+        color: aliceblue;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        width: 350px;
+
+        img {
+                width: 100%;
+                height: 270px;
+                border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -ms-border-radius: 10px;
+                -o-border-radius: 10px;
+        }
+
+        input {
+                width: 100%;
+        }
+
+        button {
+                border: none;
+                background-color: transparent;
+                outline: none;
+                transition: .3s;
+                -webkit-transition: .3s;
+                -moz-transition: .3s;
+                -ms-transition: .3s;
+                -o-transition: .3s;
+                color: aliceblue;
+                font-size: 18px;
+
+                &:hover {
+                        color: var(--faded-purple);
+                }
+
+        }
+
+        .time-spans {
+                display: flex;
+                justify-content: space-between;
+        }
+
+        .volume {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+        }
+
+        .controls {
+                margin-top: 1rem;
+                display: flex;
+                justify-content: space-between;
+        }
+}
+
+input[type='range'] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 10px;
+        border: 1px solid #333333;
+        border-radius: 9999px;
+        background: linear-gradient(90deg, var(--faded-purple) 50%, #00000014 50%);
+        cursor: pointer;
+
+        &:focus {
+                outline: none;
+        }
+}
+
+/* Thumb: for Chrome, Safari, Edge */
+input[type='range']::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #333333;
+        border-radius: 9999px;
+        background: #faad7a;
+        box-shadow: none;
+}
+
+/* Thumb: for Firefox */
+input[type='range']::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #333333;
+        border-radius: 9999px;
+        background: #faad7a;
+        box-shadow: none;
+}
