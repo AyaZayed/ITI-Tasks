@@ -1,0 +1,22 @@
+@use "../abstracts/variables" as *;
+
+.department {
+   background-color: $light-gray;
+   padding: 4rem 0;
+
+   &__iconRow {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-between;
+
+      .card-icon {
+         width: 30%;
+      }
+   }
+
+   &__btn {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+   }
+}

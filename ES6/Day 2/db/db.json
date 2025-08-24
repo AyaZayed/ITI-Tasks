@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "name": "Lipstick red",
+      "price": "4",
+      "id": "6a02"
+    },
+    {
+      "name": "blush pink",
+      "price": "34",
+      "id": "5d10"
+    },
+    {
+      "id": "c42a",
+      "name": "eyeliner",
+      "price": "19"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+@use "../abstracts/variables" as *;
+
+.contact-nav {
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: $contact-nav-height;
+   width: 100%;
+   background-color: $lightest-grey;
+   color: $grey-font;
+   font-weight: 300;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   z-index: 1;
+
+   &__items {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      padding-right: 0.5rem;
+      font-weight: 600;
+      align-items: center;
+   }
+
+   hr {
+      margin: 0.5rem 0;
+      height: $contact-nav-height;
+      border: none;
+      border-left: 1px solid $border-gray;
+   }
+
+   &__item {
+      display: flex;
+      align-items: center;
+      height: 100%;
+   }
+   &__icon {
+      margin-right: 5px;
+      color: $primary-color;
+   }
+
+   h3 {
+      font-size: 12.6px;
+      font-weight: 400;
+   }
+}

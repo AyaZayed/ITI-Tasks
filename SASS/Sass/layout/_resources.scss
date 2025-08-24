@@ -1,0 +1,22 @@
+@use "../abstracts/variables" as *;
+
+.resources {
+   padding: 3rem 0;
+   background-color: $lightest-grey;
+
+   .container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+   }
+
+   &__cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+   }
+
+   &__btn {
+      margin: 2rem auto;
+   }
+}

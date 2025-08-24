@@ -1,0 +1,22 @@
+@use "../abstracts/variables" as *;
+
+.insurance {
+   padding: 4rem 0;
+
+   &__img {
+      margin: 2rem auto;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      border: 1px solid $border-gray;
+
+      img {
+         width: 100%;
+         height: 140px;
+         padding: 2.5rem;
+
+         &:not(:last-child) {
+            border-right: 1px solid $border-gray;
+         }
+      }
+   }
+}

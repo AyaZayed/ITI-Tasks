@@ -1,0 +1,44 @@
+@use "../abstracts/variables" as *;
+
+.hero {
+   height: 100vh;
+   background-image: url("https://www.portotheme.com/wordpress/porto/medical/wp-content/uploads/sites/67/2024/02/medical-slide-1.jpg");
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   color: #fff;
+   gap: 1rem;
+   background-color: rgba(0, 0, 0, 0.3);
+   background-blend-mode: overlay;
+   position: relative;
+
+   &__content {
+      h1 {
+         font-size: 56px;
+         margin-bottom: 2rem;
+         font-weight: 500;
+      }
+
+      h1,
+      h2 {
+         text-transform: uppercase;
+         font-weight: 800;
+      }
+
+      h3 {
+         border-bottom: 1.5px solid #fff;
+         width: -webkit-fit-content;
+         width: -moz-fit-content;
+         width: fit-content;
+         padding-bottom: 0.5rem;
+         font-weight: 400;
+      }
+   }
+
+   .section-desc {
+      color: #fff;
+   }
+}

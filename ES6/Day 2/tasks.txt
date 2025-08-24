@@ -1,0 +1,3 @@
+data table for external json => paganagtion & search (++)
+
+-- CRUD => id => input => update , delete => json server

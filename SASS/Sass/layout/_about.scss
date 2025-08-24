@@ -1,0 +1,41 @@
+@use "../abstracts/variables" as *;
+
+.about {
+   padding: 10rem 0 4rem;
+   color: $gray-color;
+
+   .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+   }
+
+   .section-title__header {
+      color: #000;
+   }
+
+   &__content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+   }
+
+   &__btn {
+      margin-top: 2rem;
+   }
+
+   &__desc {
+      line-clamp: 3;
+      -webkit-line-clamp: 3;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+   }
+
+   &__img {
+      box-shadow: 10px 10px 74px -15px rgba(0, 0, 0, 0.33);
+      img {
+         vertical-align: top;
+      }
+   }
+}

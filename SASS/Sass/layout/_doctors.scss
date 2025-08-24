@@ -1,0 +1,12 @@
+@use "../abstracts/variables" as *;
+
+.doctors {
+   padding: 4rem 0;
+
+   &__cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+   }
+}

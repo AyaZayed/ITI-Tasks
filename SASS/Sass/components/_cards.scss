@@ -1,0 +1,113 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.card-icon {
+   display: flex;
+   font-size: 12.6px;
+
+   &__img {
+      margin-right: 30px;
+   }
+   &__text {
+      a {
+         margin-bottom: 16px;
+         font-size: 19.6px;
+         color: $primary-color;
+         text-transform: capitalize;
+         font-weight: 600;
+         display: inline-block;
+
+         &:hover {
+            color: $blue-color;
+         }
+      }
+   }
+   p {
+      color: $gray-color;
+   }
+}
+
+.card-img {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   background-color: #fff;
+
+   &:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+   }
+
+   &__img {
+      width: 100%;
+      height: 160px;
+   }
+
+   &__text {
+      padding: 10px 15px 20px;
+   }
+
+   &__title h3 {
+      font-size: 17.6px;
+      @include transit(0.3s);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+
+      &:hover {
+         color: $primary-color;
+      }
+   }
+
+   &__desc {
+      line-clamp: 2;
+      -webkit-line-clamp: 2;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: $grey-font;
+      font-size: 12.6px;
+   }
+}
+
+.card-doctor {
+   display: flex;
+   flex-direction: column;
+
+   &:hover {
+      .card-doctor__content {
+         @include hoverVal($primary-color);
+      }
+
+      .card-doctor__dept,
+      .card-doctor__name {
+         color: #fff;
+      }
+   }
+
+   &__img {
+      width: 100%;
+      height: 280px;
+   }
+
+   &__dept {
+      font-size: 16px;
+      color: $grey-font;
+   }
+
+   &__content {
+      display: flex;
+      gap: 1rem;
+      justify-content: space-between;
+      padding: 1.2rem 2rem;
+      align-items: center;
+      @include transit(0.3s);
+
+      i {
+         font-size: 24px;
+      }
+   }
+
+   &__name {
+      font-size: 19px;
+      font-weight: 500;
+   }
+}

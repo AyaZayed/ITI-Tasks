@@ -1,0 +1,21 @@
+// mixins for not repeat a peace of code
+
+// @mixin hoverValues($bgColor, $scalVal: 1.5) {
+//   background-color: $bgColor;
+//   color: $primary-color;
+//   transform: scale($scalVal);
+// }
+@use "./variables" as *;
+
+@mixin hoverVal($bgColor, $fontColor: $light-color) {
+   background-color: $bgColor;
+   color: $fontColor;
+}
+
+@mixin transit($duration: 0.3s) {
+   transition: all $duration ease-in-out;
+   -webkit-transition: all $duration ease-in-out;
+   -moz-transition: all $duration ease-in-out;
+   -ms-transition: all $duration ease-in-out;
+   -o-transition: all $duration ease-in-out;
+}

@@ -1,0 +1,32 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.btn {
+   text-decoration: none;
+   text-transform: uppercase;
+   padding: 10px 30px;
+   background-color: transparent;
+   font-family: $main-font;
+   cursor: pointer;
+
+   &--dark {
+      border: 2px solid $dark-color;
+      color: $dark-color;
+
+      &:hover {
+         @include hoverVal($dark-color);
+      }
+   }
+
+   &--primary {
+      color: $primary-color;
+      &:hover {
+         @include hoverVal($secondary-color);
+      }
+   }
+
+   &--secondary {
+      background-color: $secondary-color;
+      color: $light-color;
+   }
+}

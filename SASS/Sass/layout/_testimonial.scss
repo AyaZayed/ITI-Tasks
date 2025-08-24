@@ -1,0 +1,64 @@
+@use "../abstracts/variables" as *;
+
+.testimonial {
+   background-color: $secondary-color;
+   color: #fff;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   gap: 2rem;
+   font-size: 18px;
+   line-height: 32px;
+   padding: 5rem 0;
+
+   &__quote {
+      border: 1px solid #fff;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      font-size: 50px;
+      margin-bottom: 2rem;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+   }
+
+   &__line {
+      width: 80px;
+      height: 2px;
+      background-color: #fff;
+   }
+
+   &__text {
+      width: 50%;
+      position: relative;
+
+      &::before {
+         content: "\275D";
+         font-size: 45px;
+         position: absolute;
+         top: -15px;
+         left: -15px;
+      }
+
+      &::after {
+         content: "\275E";
+         font-size: 45px;
+         position: absolute;
+         bottom: -35px;
+         right: -35px;
+      }
+   }
+
+   &__name {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 18px;
+   }
+}

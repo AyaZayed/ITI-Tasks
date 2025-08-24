@@ -1,0 +1,36 @@
+@use "../abstracts/variables" as *;
+
+.header {
+   position: -webkit-sticky;
+   position: sticky;
+   top: $contact-nav-height;
+   z-index: 1;
+   width: 100%;
+   background-color: $light-color;
+   font-size: 12px;
+   padding: 14px 24px;
+
+   div {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   img {
+      width: 150px;
+   }
+
+   &__nav {
+      ul {
+         list-style: none;
+         display: flex;
+      }
+      li {
+         a {
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+         }
+      }
+   }
+}
