@@ -1,0 +1,139 @@
+@font-face {
+        font-family: Muli;
+        src: url(./fonts/Muli.ttf);
+}
+
+:root {
+        --font-primary: Muli, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        --font-secondary: 'Oswald',
+                sans-serif;
+        --font-dancing: 'Dancing Script', cursive;
+        --primary-color: #1089FF !important;
+        --navbar-height: 82.7px !important;
+}
+
+body {
+        font-family: var(--font-primary) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+        font-family: var(--font-secondary) !important;
+}
+
+::-moz-selection {
+        background-color: black !important;
+        color: #fff !important;
+}
+
+::selection {
+        background-color: black !important;
+        color: #fff !important;
+}
+
+.font-primary {
+        font-family: var(--font-primary) !important;
+}
+
+.font-secondary {
+        font-family: var(--font-secondary) !important;
+}
+
+.font-dancing {
+        font-family: var(--font-dancing) !important;
+}
+
+.btn-primary {
+        background-color: var(--primary-color) !important;
+}
+
+.bg-primary {
+        background-color: var(--primary-color) !important;
+}
+
+.color-primary {
+        color: var(--primary-color) !important;
+}
+
+.navbar {
+        letter-spacing: .05rem;
+        background-color: var(--primary-color) !important;
+        height: var(--navbar-height) !important;
+
+        .nav-link {
+                color: #fff !important;
+                padding: .5rem 0 !important;
+                width: -webkit-fit-content;
+                width: -moz-fit-content;
+                width: fit-content;
+        }
+
+        .active {
+                border-bottom: 3px solid #fff;
+        }
+}
+
+.carousel-indicators {
+        z-index: 3 !important;
+
+        button.active {
+                background-color: var(--primary-color) !important;
+        }
+}
+
+.carousel-inner {
+        img {
+                height: 100vh !important;
+                -o-object-fit: cover;
+                object-fit: cover;
+                -o-object-position: center;
+                object-position: center;
+        }
+
+        &::before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background: #222;
+                opacity: .3;
+                border-bottom-right-radius: 0px;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                z-index: 1;
+        }
+
+        .card-img-overlay {
+                z-index: 2;
+        }
+
+        .card-img-overlay#text-right {
+                right: 10% !important;
+                text-align: right;
+        }
+
+        .card-img-overlay#text-center {
+                text-align: center;
+        }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+        z-index: 3 !important;
+}
+
+.about {
+        #welcome::after {
+                content: '';
+                display: block;
+                margin-top: 1rem;
+                width: 50px;
+                height: 3px;
+                background-color: var(--primary-color);
+        }
+}

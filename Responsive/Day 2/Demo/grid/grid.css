@@ -1,0 +1,51 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+section {
+  display: grid;
+  grid-auto-rows: minmax(150px, auto);
+
+  grid-template-areas:
+    "head head head head"
+    "aside1 artt artt aside2"
+    "aside1 artt artt aside2"
+    "foot foot foot foot";
+}
+
+header {
+  grid-area: head;
+  background-color: aquamarine;
+}
+
+.aside1 {
+  grid-area: aside1;
+  background-color: aqua;
+}
+
+article {
+  grid-area: artt;
+  background-color: bisque;
+}
+
+.aside2 {
+  grid-area: aside2;
+  background-color: aqua;
+}
+
+footer {
+  grid-area: foot;
+  background-color: aquamarine;
+}
+
+@media only screen and (max-width: 550px) {
+  section {
+    grid-template-areas:
+      "head"
+      "aside1"
+      "artt"
+      "aside2"
+      "foot";
+  }
+}

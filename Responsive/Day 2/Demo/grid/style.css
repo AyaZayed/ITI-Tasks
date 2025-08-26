@@ -1,0 +1,78 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.parent {
+  height: 100vh;
+  background-color: antiquewhite;
+
+  display: grid;
+
+  /* column */
+  /* grid-template-columns: auto auto auto; */
+  /* grid-template-columns: 80px 200px auto; */
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  /* grid-template-columns: repeat(4,1fr); */
+
+  /* grid-template-columns: 1fr auto auto; */
+  /* grid-template-columns: 2fr 200px 5%; */
+
+  /* rows */
+  /* grid-template-rows:80px 200px ; */
+
+  /* gaps */
+  /* column-gap: 20px;
+
+  row-gap: 35px; */
+  /* gap: 25px 40px; */
+
+  /* justify-content -> xaxis */
+  /* justify-content: space-between; */
+  /* justify-content: space-around; */
+  /* justify-content: space-evenly; */
+  /* justify-content: center; */
+
+  /* start end */
+
+  /* align-content yaxis */
+  /* align-content: space-around; */
+  /* align-content: space-between; */
+  /* align-content: center; */
+  /* /////////////////////////////////////// */
+
+  /* grid-template-areas */
+  grid-template-areas:
+    "child1 child1 child1 "
+    "child2 child2 child2"
+    "child3 child3 child3";
+}
+
+.child1 {
+  background-color: aqua;
+  /* grid-column-start: 1;
+  grid-column-end: 3; */
+  /* grid-column: 1 /span 2; */
+
+  grid-area: child1;
+}
+
+.child2 {
+  background-color: blueviolet;
+  /* grid-row-start: 1;
+  grid-row-end: 3; */
+
+  /* grid-row: 1/ span 2; */
+
+  grid-area: child2;
+}
+
+.child3 {
+  background-color: brown;
+  /* justify-self */
+  /* justify-self: right; */
+  /* justify-self: center; */
+
+  grid-area: child3;
+}

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Bootstrap Task 2</title>
+      <link rel="stylesheet" href="./style.css" />
+      <!-- Bootstrap CSS -->
+      <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+         crossorigin="anonymous" />
+   </head>
+   <body>
+      <h1 class="p-4">The Flower Blog</h1>
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+         <div class="container-fluid">
+            <button
+               class="navbar-toggler"
+               type="button"
+               data-bs-toggle="collapse"
+               data-bs-target="#navbarNavAltMarkup"
+               aria-controls="navbarNavAltMarkup"
+               aria-expanded="false"
+               aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+               class="collapse navbar-collapse md-d-flex justify-content-center"
+               id="navbarNavAltMarkup">
+               <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="#"
+                     >Blog</a
+                  >
+                  <a class="nav-link" href="#">About</a>
+                  <a class="nav-link" href="#">Archive</a>
+                  <a class="nav-link" href="#">Contact</a>
+                  <a class="nav-link" href="#">Contact</a>
+                  <a class="nav-link" href="#">Subscribe via RSS</a>
+               </div>
+            </div>
+         </div>
+      </nav>
+
+      <div class="container p-3 py-5 p-md-4">
+         <div class="flower-card card bg-dark text-white">
+            <img
+               src="https://images.unsplash.com/photo-1661984986808-3f3705f4b706?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmxvcmElMjBncmVlbnxlbnwwfHwwfHx8MA%3D%3D"
+               class="card-img h-100"
+               alt="a close up of a plant" />
+            <div class="card-img-overlay p-4">
+               <h2 class="card-title fs-1 mb-3">
+                  Do you love flowers as much as we do?
+               </h2>
+               <p class="card-text">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Magni nulla tempora incidunt dolorem, commodi doloremque
+                  officiis eveniet nisi natus voluptatibus ipsum fuga ratione
+                  maxime quam optio, nesciunt autem libero obcaecati? Lorem
+                  ipsum dolor sit amet consectetur adipisicing elit.
+               </p>
+            </div>
+         </div>
+         <div class="content d-flex flex-column gap-3 flex-md-row">
+            <div class="blog">
+               <h3 class="mb-3 fs-1">The Quiet Magic of Flowers</h3>
+               <p>
+                  Flowers have a way of softening the world. They slip into our
+                  lives quietly—on a windowsill, by the side of the road, or
+                  wrapped in paper on a special day—and somehow manage to speak
+                  without words. Every bloom carries its own story.
+               </p>
+               <figure class="figure my-3">
+                  <img
+                     src="https://images.unsplash.com/photo-1474557157379-8aa74a6ef541?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZmxvcmF8ZW58MHx8MHx8fDA%3D"
+                     class="figure-img img-fluid rounded"
+                     alt="rule of thirds photography of pink and white lotus flower floating on body of water" />
+                  <figcaption class="figure-caption">
+                     A beauty of nature
+                  </figcaption>
+               </figure>
+               <p>
+                  In many ways, the colors we admire are nature’s clever way of
+                  saying, “Come closer, there’s work to do.” But flowers aren’t
+                  only about biology. They are about us. We bring them to
+                  weddings, funerals, celebrations, and quiet apologies. They
+                  sit with us in joy and in grief, filling spaces that words
+                  sometimes can’t reach. Maybe that’s the quiet magic of
+                  flowers: they don’t last forever, but while they’re here, they
+                  remind us to slow down, notice the details, and appreciate
+                  beauty in its most fleeting form.
+               </p>
+               <hr />
+               <h3 class="fs-1 my-4">Comments</h3>
+               <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                     <h2 class="accordion-header" id="headingOne">
+                        <button
+                           class="accordion-button"
+                           type="button"
+                           data-bs-toggle="collapse"
+                           data-bs-target="#collapseOne"
+                           aria-expanded="true"
+                           aria-controls="collapseOne">
+                           Great content about flowers
+                        </button>
+                     </h2>
+                     <div
+                        id="collapseOne"
+                        class="accordion-collapse collapse show"
+                        aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                           Lorem ipsum dolor sit amet consectetur adipisicing
+                           elit. Aspernatur laboriosam veniam ab fugit
+                           recusandae hic dolore, repellat a esse animi, commodi
+                           mollitia asperiores dignissimos quaerat! Enim eveniet
+                           est voluptatum ipsum?
+                        </div>
+                     </div>
+                  </div>
+                  <div class="accordion-item">
+                     <h2 class="accordion-header" id="headingTwo">
+                        <button
+                           class="accordion-button collapsed"
+                           type="button"
+                           data-bs-toggle="collapse"
+                           data-bs-target="#collapseTwo"
+                           aria-expanded="false"
+                           aria-controls="collapseTwo">
+                           Flowers are beautiful
+                        </button>
+                     </h2>
+                     <div
+                        id="collapseTwo"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                           Lorem ipsum dolor sit amet consectetur adipisicing
+                           elit. Nostrum fugiat eaque quibusdam magnam sunt
+                           eveniet asperiores exercitationem! Incidunt
+                           voluptatum deleniti nihil itaque facere pariatur,
+                           iusto molestiae dolore tenetur corporis nostrum!
+                        </div>
+                     </div>
+                  </div>
+                  <div class="accordion-item">
+                     <h2 class="accordion-header" id="headingThree">
+                        <button
+                           class="accordion-button collapsed"
+                           type="button"
+                           data-bs-toggle="collapse"
+                           data-bs-target="#collapseThree"
+                           aria-expanded="false"
+                           aria-controls="collapseThree">
+                           I love flowers
+                        </button>
+                     </h2>
+                     <div
+                        id="collapseThree"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                           Lorem ipsum dolor sit amet consectetur adipisicing
+                           elit. Voluptate eligendi neque inventore atque
+                           quisquam, mollitia eaque vero maiores, quas officia
+                           sapiente, dolore aliquid harum nam est ullam quae
+                           iure expedita?
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <form class="my-5">
+                  <div class="d-flex gap-3 flex-column flex-md-row">
+                     <div class="mb-3 w-100">
+                        <label for="firstName" class="form-label"
+                           >First Name</label
+                        >
+                        <input
+                           type="text"
+                           class="form-control"
+                           id="firstName"
+                           aria-describedby="firstName" />
+                     </div>
+                     <div class="mb-3 w-100">
+                        <label for="lastName" class="form-label"
+                           >Last Name</label
+                        >
+                        <input
+                           type="text"
+                           class="form-control"
+                           id="lastName"
+                           aria-describedby="lastName" />
+                     </div>
+                     <div class="mb-3 w-100">
+                        <label for="email" class="form-label">Email</label>
+                        <div class="input-group mb-3">
+                           <span class="input-group-text" id="basic-addon1"
+                              >@</span
+                           >
+                           <input
+                              type="text"
+                              id="email"
+                              class="form-control"
+                              placeholder="Email"
+                              aria-label="Email"
+                              aria-describedby="basic-addon1" />
+                        </div>
+                     </div>
+                  </div>
+                  <div class="mb-4 w-100" id="comment">
+                     <label for="comment" class="form-label">Comment</label>
+                     <input
+                        type="text"
+                        class="form-control"
+                        id="comment"
+                        aria-describedby="comment" />
+                  </div>
+                  <button type="submit" class="btn btn-primary">Comment</button>
+               </form>
+            </div>
+            <div
+               class="categories bg-secondary d-flex flex-column gap-3 p-3 rounded-3">
+               <div class="card bg-light text-dark">
+                  <div class="card-body">
+                     <h4 class="card-title">Categories</h4>
+                     <p class="card-text">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Fugit cumque ducimus, aliquam commodi iusto fugiat
+                        consectetur nulla. Distinctio itaque error facilis
+                        debitis animi magni nesciunt, consectetur sapiente ullam
+                        saepe culpa.
+                     </p>
+                  </div>
+               </div>
+               <div class="card bg-light text-dark">
+                  <div class="card-body">
+                     <h4 class="card-title">Categories</h4>
+                     <p class="card-text">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Fugit cumque ducimus, aliquam commodi iusto fugiat
+                        consectetur nulla. Distinctio itaque error facilis
+                        debitis animi magni nesciunt, consectetur sapiente ullam
+                        saepe culpa.
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <footer class="bg-dark text-light row p-5 gap-3 gap-md-0">
+         <div class="col-12 col-md-4">
+            <h4>About</h4>
+            <p>
+               Lorem ipsum doorl sit, amet consectetur adipisicing elit. Non, a
+               numquam omnis nam dolorum error voluptates sequi quisquam
+               aliquid, iste esse laudantium sit itaque ducimus delectus,
+               asperiores eum! Et, blanditiis.
+            </p>
+         </div>
+         <div class="col-12 col-md-4">
+            <h4>Blogroll</h4>
+            <ul>
+               <li>lorem laudantium</li>
+               <li>ipsum blanditiis</li>
+               <li>dolor voluptates</li>
+               <li>sit asperiores</li>
+               <li>amet consectetur</li>
+            </ul>
+         </div>
+         <div class="col-12 col-md-4">
+            <h4>Poplular</h4>
+            <ul>
+               <li>Lorem ipsum dolor sit accusantium</li>
+               <li>consectetur adipisicing elit.</li>
+               <li>amet Nesciunt voluptas dicta</li>
+               <li>rerum neque voluptatem soluta</li>
+               <li>velit debitis eos tempore</li>
+               <li>officiis dignissimos in</li>
+               <li>incidunt quisquam quod ab! Error, facere soluta?</li>
+            </ul>
+         </div>
+      </footer>
+      <script
+         src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+         crossorigin="anonymous"></script>
+   </body>
+</html>

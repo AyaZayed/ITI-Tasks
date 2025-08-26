@@ -1,0 +1,147 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 3;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item {
+  margin: 0 1em;
+}
+
+.nav-item a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu .line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0px;
+}
+
+.signup a {
+  text-decoration: none;
+  color: #fff;
+  padding: 0.5em 0.75em;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+
+.hero {
+  height: 60vh;
+  background-image: linear-gradient(135deg, #0c08e1ee, #04abd9, #cc0ed6ee);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5em;
+}
+
+.hero p {
+  font-size: 1.25rem;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2em;
+}
+
+
+.content-item{
+    flex: 1 1 30%;
+    margin: 1em;
+    background-color: #f0f0f0;
+    padding: 2em;
+    border-radius: 10px;
+}
+
+.content-item p{
+    line-height: 1.5;
+    margin-top: 20px;
+}
+
+
+footer{
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .signup {
+    display: none;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 62px;
+    background-color: #333;
+    text-align: center;
+    transition: 0.4s;
+  }
+
+  .nav-item {
+    padding: 1em;
+  }
+
+  .nav-list.active {
+    display: block;
+    transition: 0.4s;
+  }
+
+  .menu {
+    display: flex;
+  }
+}

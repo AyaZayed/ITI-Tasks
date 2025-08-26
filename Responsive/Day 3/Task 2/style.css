@@ -1,0 +1,36 @@
+.flower-card {
+        height: 50vh !important;
+        margin-bottom: 2em;
+
+        .card-img-overlay {
+                width: 100% !important;
+
+                @media screen and (min-width: 768px) {
+                        width: 50% !important;
+                }
+        }
+}
+
+.flower-card,
+.flower-card img {
+        border-radius: 45px !important;
+        -webkit-border-radius: 45px !important;
+        -moz-border-radius: 45px !important;
+        -ms-border-radius: 45px !important;
+        -o-border-radius: 45px !important;
+}
+
+figure {
+        width: 100%;
+
+        @media screen and (min-width: 768px) {
+                width: 30vw !important;
+        }
+}
+
+@media screen and (min-width: 768px) {
+        #comment {
+                width: 55% !important;
+        }
+
+}
