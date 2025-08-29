@@ -1,0 +1,164 @@
+* {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+}
+
+body {
+        min-height: 100vh;
+}
+
+header {
+        display: flex;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        z-index: 3;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        color: #fff;
+        padding: 1em;
+}
+
+.logo {
+        font-size: 1.5rem;
+        font-weight: 500;
+}
+
+.nav {
+        display: flex;
+        align-items: center;
+}
+
+.nav-list {
+        display: flex;
+        list-style: none;
+}
+
+.nav-item {
+        margin: 0 1em;
+}
+
+.nav-item a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1rem;
+        cursor: pointer;
+}
+
+.menu {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+}
+
+.menu .line {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 4px 0px;
+}
+
+.signup a {
+        text-decoration: none;
+        color: #fff;
+        padding: 0.5em 0.75em;
+        border: 1px solid #fff;
+        border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+        .signup {
+                display: none;
+        }
+
+        .nav-list {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                left: 0px;
+                top: 62px;
+                background-color: #333;
+                text-align: center;
+                transition: 0.4s;
+        }
+
+        .nav-item {
+                padding: 1em;
+        }
+
+        .nav-list.active {
+                display: block;
+                transition: 0.4s;
+        }
+
+        .menu {
+                display: flex;
+        }
+}
+
+.color-divs {
+        color: #fff;
+        position: absolute;
+        top: 70px;
+        width: 100%;
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+        gap: 20px;
+        padding: 20px;
+
+        @media (min-width:768px) {
+                grid-template-rows: repeat(4, 1fr);
+                grid-template-columns: 1fr 1fr;
+
+                .div1,
+                .div8 {
+                        grid-column: 1 / span 2;
+                }
+        }
+
+        @media (min-width:1024px) {
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+
+                .div1,
+                .div8 {
+                        grid-column: 1 / span 4;
+                }
+
+                .div6 {
+                        grid-column: 1 / span 2;
+                }
+
+                .div7 {
+                        grid-column: 3 / span 2;
+                }
+        }
+
+        div {
+                min-height: 200px;
+        }
+
+        .div1 {
+                background-color: rgb(112, 33, 112);
+        }
+
+        .div2,
+        .div3,
+        .div4,
+        .div5 {
+                background-color: rgb(241, 126, 241);
+        }
+
+        .div6,
+        .div7 {
+                background-color: rgb(236, 176, 236);
+        }
+
+        .div8 {
+                background-color: rgb(237, 211, 237);
+        }
+}

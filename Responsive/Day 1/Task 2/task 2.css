@@ -1,0 +1,52 @@
+* {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-size: 16px;
+}
+
+body {
+        text-transform: capitalize;
+        color: aliceblue;
+        text-align: center;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+}
+
+header,
+footer {
+        background-color: rgb(43, 43, 233);
+        padding: 1em;
+}
+
+.content {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100%;
+        gap: 10px;
+        padding: 0 10px;
+}
+
+@media screen and (min-width: 768px) {
+        .content {
+                flex-direction: row;
+        }
+}
+
+main,
+aside {
+        width: 100%;
+        height: 100%;
+}
+
+main {
+        background-color: rgb(155, 65, 135);
+}
+
+aside {
+        background-color: rgb(164, 164, 81);
+}
