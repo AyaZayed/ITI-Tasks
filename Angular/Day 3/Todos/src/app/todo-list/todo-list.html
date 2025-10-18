@@ -1,0 +1,26 @@
+<ul class="list">
+  @for(t of todos; track $index){
+  <li class="flex justify-between mb-4">
+    <div>
+      <input
+        type="checkbox"
+        name="todo"
+        [id]="t.title"
+        [checked]="t.completed"
+        (change)="toggleTodo($index)"
+      />
+      <label [for]="t.title" class="capitalize text-lg" [class]="{ 'line-through': t.completed }">
+        {{ t.title }}
+      </label>
+    </div>
+    <button
+      class="outline-1 outline-red-500 text-red-500 p-1 rounded-lg px-3 hover:bg-red-500 hover:text-white"
+      (click)="deleteTodo($index)"
+    >
+      DELETE
+    </button>
+  </li>
+  } @empty {
+  <li>Let's get some work done</li>
+  }
+</ul>

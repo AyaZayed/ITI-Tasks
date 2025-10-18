@@ -1,0 +1,7 @@
+<div class="create">
+  <form (ngSubmit)="addDept()">
+    <label for="deptName">Department Name</label>
+    <input type="text" name="deptName" id="deptName" [(ngModel)]="dept.name" />
+    <button type="submit">Add</button>
+  </form>
+</div>

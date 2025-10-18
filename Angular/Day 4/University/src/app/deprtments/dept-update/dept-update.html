@@ -1,0 +1,11 @@
+<div class="create">
+  @if(dept){
+  <form (ngSubmit)="updateDept()">
+    <label for="deptName">Department Name</label>
+    <input type="text" name="deptName" id="deptName" [(ngModel)]="dept.name" />
+    <button type="submit">Update</button>
+  </form>
+  }@else {
+  <p>Loading...</p>
+  }
+</div>

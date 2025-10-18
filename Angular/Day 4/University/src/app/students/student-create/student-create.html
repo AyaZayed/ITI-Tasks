@@ -1,0 +1,11 @@
+<div class="create-std">
+  <form (ngSubmit)="addStd()">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" [(ngModel)]="std.name" />
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email" [(ngModel)]="std.email" />
+    <label for="age">Age</label>
+    <input type="number" name="age" id="age" [(ngModel)]="std.age" />
+    <button type="submit">Add</button>
+  </form>
+</div>

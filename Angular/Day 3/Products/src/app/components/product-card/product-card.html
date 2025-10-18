@@ -1,0 +1,43 @@
+<div class="card text-center shadow-sm h-100 d-flex flex-column position-relative">
+  <span
+    class="position-absolute text-white px-3 py-1 rounded-5"
+    [style]="'top:10px;left:10px'"
+    [class]="product && product.stock > 0 ? 'bg-success' : 'bg-danger'"
+  >
+    {{ product && product.stock > 0 ? 'In Stock' : 'Out of Stock' }}
+  </span>
+  <div class="img-container bg-light d-flex justify-content-center align-items-center p-4">
+    <img
+      [src]="product?.thumbnail"
+      class="card-img-top"
+      [alt]="product?.title"
+      style="height: 300px"
+    />
+  </div>
+  <div class="card-body flex-grow-1 d-flex flex-column">
+    <h5 class="card-title">{{ product?.title }}</h5>
+    <p class="card-text text-muted mb-1">
+      {{ product?.price | currency }}
+    </p>
+
+    <div class="text-warning mb-2 d-flex justify-content-center" style="height: 25px">
+      <div class="position-relative" style="width: 100px">
+        @for (star of [1, 2, 3, 4, 5]; track $index) {
+        <fa-icon
+          [icon]="faStar"
+          class="position-absolute"
+          [style]="'left:' + $index * 20 + 'px'"
+        ></fa-icon>
+        } @for (star of getStarsArr(product?.rating); track $index) {
+        <fa-icon
+          [icon]="faStarSolid"
+          class="position-absolute"
+          [style]="'left:' + $index * 20 + 'px'"
+        ></fa-icon>
+        }
+      </div>
+    </div>
+
+    <button class="btn btn-primary mt-auto">Add to Cart</button>
+  </div>
+</div>

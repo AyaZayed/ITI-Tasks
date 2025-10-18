@@ -1,0 +1,27 @@
+<div class="container my-5">
+  <div class="search">
+    <form class="d-flex gap-3">
+      <input
+        class="form-control mb-5"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        [(ngModel)]="searchTerm"
+        name="searchTerm"
+        (input)="onSearch()"
+      />
+      <button class="btn btn-outline-primary h-100" type="submit" (click)="clearSearch()">
+        Search
+      </button>
+    </form>
+  </div>
+  <div class="row row-cols-1 row-cols-lg-3 g-4">
+    @for (product of products$ | async; track product.id) {
+    <a [routerLink]="['/products', product.id]" class="col">
+      <app-product-card [product]="product"></app-product-card>
+    </a>
+    } @empty {
+    <p class="text-center">Loading products...</p>
+    }
+  </div>
+</div>

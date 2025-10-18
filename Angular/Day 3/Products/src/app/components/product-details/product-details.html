@@ -1,0 +1,48 @@
+<div class="container py-5">
+  <div class="row row-cols-1 row-cols-lg-2">
+    <div class="col">
+      <img
+        src="{{ product?.thumbnail }}"
+        alt="{{ product?.title }}"
+        class="img-fluid bg-light mb-3 w-100 h-75"
+      />
+      <div class="d-flex">
+        @for(image of product?.images; track $index) {
+        <img src="{{ image }}" alt="{{ product?.title }}" width="100" class="bg-light" />
+        }
+      </div>
+    </div>
+    <div class="col d-flex flex-column gap-3">
+      <h1 class="fw-bold">{{ product?.title }}</h1>
+      <p class="text-muted mb-1">Description: {{ product?.description }}</p>
+      <div class="text-warning mb-2" style="height: 25px">
+        <div class="position-relative" style="width: 100px">
+          @for (star of [1, 2, 3, 4, 5]; track $index) {
+          <fa-icon
+            [icon]="faStar"
+            class="position-absolute"
+            [style]="'left:' + $index * 20 + 'px'"
+          ></fa-icon>
+          } @for (star of getStarsArr(product?.rating); track $index) {
+          <fa-icon
+            [icon]="faStarSolid"
+            class="position-absolute"
+            [style]="'left:' + $index * 20 + 'px'"
+          ></fa-icon>
+          }
+        </div>
+      </div>
+      <h2 class="mb-1 fs-5">
+        Category: <span class="text-capitalize text-primary">{{ product?.category }}</span>
+      </h2>
+      <h3>
+        Price:
+        <span class="text-decoration-line-through text-muted fw-light">{{
+          product?.price | currency
+        }}</span>
+        {{ product?.price | discount : product?.discountPercentage | currency }}
+      </h3>
+      <button class="btn btn-primary" (click)="addToCart()">Add To Cart</button>
+    </div>
+  </div>
+</div>

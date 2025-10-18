@@ -1,0 +1,17 @@
+<form class="flex gap-2 mb-3 items-center" (ngSubmit)="addTodo()">
+  <label for="todo" class="text-nowrap"> Enter a todo </label>
+  <input
+    type="text"
+    name="todo"
+    id="todo"
+    class="w-full rounded-lg border-0 outline-1 outline-stone-400 placeholder:text-stone-500 p-2 px-4 focus:outline-2 focus:outline-violet-300"
+    placeholder="e.g., Walk the dog"
+    [(ngModel)]="todo.title"
+  />
+  <button
+    type="submit"
+    class="bg-gradient-to-r from-sky-200 to-violet-300 rounded-lg px-6 font-bold h-11 hover:bg-gradient-to-r hover:from-sky-300 hover:to-violet-400 cursor-pointer"
+  >
+    ADD
+  </button>
+</form>
