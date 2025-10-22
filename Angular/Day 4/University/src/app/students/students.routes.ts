@@ -8,10 +8,9 @@ import { NotFound } from '../not-found/not-found';
 
 export const student_routes: Routes = [
   { path: '', component: StudentList },
-  { path: 'departments', component: StudentList },
-  { path: ':id', component: StudentDetails },
   { path: 'create', component: StudentCreate },
   { path: 'update/:id', component: StudentUpdate },
   { path: 'delete/:id', component: StudentDelete },
+  { path: ':id', component: StudentDetails },
   { path: '**', component: NotFound },
 ];

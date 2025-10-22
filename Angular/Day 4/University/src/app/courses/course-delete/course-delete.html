@@ -1,1 +1,5 @@
-<p>course-delete works!</p>
+<form>
+  <p>Are you sure you want to delete {{ course?.name }}?</p>
+  <button type="submit" (click)="deleteCourse()" class="btn btn-primary me-3">Delete</button>
+  <a routerLink="/courses">Cancel</a>
+</form>

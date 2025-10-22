@@ -1,1 +1,15 @@
-<p>student-update works!</p>
+<div class="update">
+  @if(student){
+  <form (ngSubmit)="updateStd()">
+    <label for="crsName">Student Name</label>
+    <input type="text" name="crsName" id="crsName" [(ngModel)]="student.name" />
+    <label for="duration">Student Email</label>
+    <input type="text" name="duration" id="duration" [(ngModel)]="student.email" />
+    <label for="duration">Student Age</label>
+    <input type="number" name="duration" id="duration" [(ngModel)]="student.age" />
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+  }@else {
+  <p>Loading...</p>
+  }
+</div>

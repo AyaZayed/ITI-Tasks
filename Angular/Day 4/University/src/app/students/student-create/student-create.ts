@@ -1,7 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Student } from '../../_models/student';
 import { StudentService } from '../../_services/student-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-create',
@@ -11,7 +12,8 @@ import { StudentService } from '../../_services/student-service';
 })
 export class StudentCreate {
   std = new Student();
-  stdServ = inject(StudentService);
+
+  constructor(public router: Router, public stdServ: StudentService) {}
 
   addStd() {
     const stdsLength = this.stdServ.getStudents().length;
@@ -19,7 +21,8 @@ export class StudentCreate {
 
     if (this.std.name && this.std.name.trim()) {
       this.stdServ.createStudent(this.std);
-      this.std = new Student(0, '', '', 0);
+      this.std = new Student();
+      this.router.navigate(['/students']);
     }
   }
 }

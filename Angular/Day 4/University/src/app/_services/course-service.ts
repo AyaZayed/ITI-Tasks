@@ -15,11 +15,25 @@ export class CourseService {
     return this.courses;
   }
 
-  getCourseById(id: number) {
-    return this.courses.filter((crs) => crs.id === id);
+  getCourseById(id: number): Course | null {
+    return this.courses.find((crs) => crs.id === id) ?? null;
   }
 
   createCourse(crs: Course) {
+    if (!crs.name || !crs.duration) throw new Error('Please enter course details');
+    if (this.courses.some((c) => c.name === crs.name)) {
+      throw new Error('Course already exists');
+    }
     this.courses.push({ ...crs });
+  }
+
+  updateCourse(crs: Course) {
+    const index = this.courses.findIndex((crs) => crs.id === crs.id);
+    this.courses[index] = { ...crs };
+  }
+
+  deleteCourse(id: number) {
+    const index = this.courses.findIndex((crs) => crs.id === id);
+    this.courses.splice(index, 1);
   }
 }

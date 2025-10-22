@@ -1,1 +1,5 @@
-<p>dept-delete works!</p>
+<form>
+  <p>Are you sure you want to delete {{ dept?.name }}?</p>
+  <button type="submit" (click)="deleteDept()" class="btn btn-primary me-3">Delete</button>
+  <a routerLink="/departments">Cancel</a>
+</form>

@@ -1,9 +1,9 @@
-<div class="create">
+<div class="update">
   @if(dept){
   <form (ngSubmit)="updateDept()">
     <label for="deptName">Department Name</label>
     <input type="text" name="deptName" id="deptName" [(ngModel)]="dept.name" />
-    <button type="submit">Update</button>
+    <button type="submit" class="btn btn-primary">Update</button>
   </form>
   }@else {
   <p>Loading...</p>

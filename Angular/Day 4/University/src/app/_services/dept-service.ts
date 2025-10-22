@@ -17,11 +17,17 @@ export class DeptService {
     return this.depts;
   }
 
-  getDeptById(id: number): Department {
-    return this.depts.filter((d) => d.id === id)[0];
+  getDeptById(id: number): Department | null {
+    return this.depts.find((d) => d.id === id) ?? null;
   }
 
   createDept(dept: Department) {
+    if (!dept.name) {
+      throw new Error('Please enter department name');
+    }
+    if (this.depts.some((d) => d.name === dept.name)) {
+      throw new Error('Department name already exists');
+    }
     this.depts.push({ ...dept });
   }
 

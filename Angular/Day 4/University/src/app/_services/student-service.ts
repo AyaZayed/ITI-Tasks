@@ -20,6 +20,18 @@ export class StudentService {
   }
 
   createStudent(std: Student) {
+    if (!std.name || !std.email || !std.age) throw new Error('Please enter student details');
+    if (this.students.find((s) => s.id === std.id)) throw new Error('Student already exists');
     this.students.push({ ...std });
+  }
+
+  updateStudent(std: Student) {
+    const index = this.students.findIndex((s) => s.id === std.id);
+    this.students[index] = { ...std };
+  }
+
+  deleteStudent(stdId: number) {
+    const index = this.students.findIndex((s) => s.id === stdId);
+    this.students.splice(index, 1);
   }
 }
