@@ -1,0 +1,14 @@
+<div class="create">
+  <form #createDeptForm="ngForm" (ngSubmit)="createDeptForm.valid && addDept(createDeptForm)">
+    <input type="hidden" name="_id" id="_id" ngModel />
+    <label for="_id">Department Id</label>
+    <input type="number" name="_id" id="_id" ngModel required />
+    <label for="name">Department Name</label>
+    <input type="text" name="name" id="name" ngModel required />
+    <label for="location">Department Location</label>
+    <input type="text" name="location" id="location" ngModel required />
+    <button type="submit" class="btn btn-primary" [disabled]="createDeptForm['invalid']">
+      Add
+    </button>
+  </form>
+</div>

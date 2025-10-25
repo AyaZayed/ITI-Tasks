@@ -1,0 +1,26 @@
+<form (ngSubmit)="login()">
+  <div class="mb-3">
+    <label for="exampleInputUsername1" class="form-label">Username*</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleInputUsername1"
+      aria-describedby="UsernameHelp"
+      [(ngModel)]="username"
+      name="username"
+      required
+    />
+    <div id="UsernameHelp" class="form-text">We'll never share your Username with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label" required>Password*</label>
+    <input
+      type="password"
+      class="form-control"
+      id="exampleInputPassword1"
+      [(ngModel)]="password"
+      name="password"
+    />
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

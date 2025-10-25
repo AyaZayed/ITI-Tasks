@@ -1,0 +1,13 @@
+<div class="update">
+  @if(dept){
+  <form #updateDeptForm="ngForm" (ngSubmit)="updateDeptForm.valid && updateDept(updateDeptForm)">
+    <label for="name">Department Name</label>
+    <input type="text" name="name" id="name" ngModel [(ngModel)]="dept.name" required />
+    <label for="location">Department Location</label>
+    <input type="text" name="location" id="location" ngModel [(ngModel)]="dept.location" required />
+    <button type="submit" class="btn btn-primary" [disabled]="updateDeptForm['invalid']">
+      Update
+    </button>
+  </form>
+  }
+</div>

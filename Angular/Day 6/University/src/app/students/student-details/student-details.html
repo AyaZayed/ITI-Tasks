@@ -1,0 +1,8 @@
+<div class="student-details">
+  <h2>Student Details</h2>
+  <p>Student ID: {{ student?._id }}</p>
+  <p>Student Name: {{ student?.name }}</p>
+  <p>Student Department: {{ student?.department?.name }}</p>
+  <p>Department Location: {{ student?.department?.location }}</p>
+  <a routerLink="/students">Back</a>
+</div>

@@ -1,0 +1,14 @@
+<h1 class="fs-2">Students</h1>
+<h2 class="fs-4"><a routerLink="/students/create">Create</a></h2>
+<ul>
+  @for(std of students;track std._id){
+  <li class="text-capitalize">
+    {{ std.name }} - {{ std.department.name }}
+    <p class="d-flex gap-3">
+      <a routerLink="/students/{{ std._id }}">Details</a>
+      <a routerLink="/students/update/{{ std._id }}">Update</a>
+      <a routerLink="/students/delete/{{ std._id }}">Delete</a>
+    </p>
+  </li>
+  }
+</ul>

@@ -1,0 +1,3 @@
+.navbar .linkActive {
+        color: var(--bs-danger) !important;
+}

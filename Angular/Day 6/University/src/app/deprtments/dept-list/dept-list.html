@@ -1,0 +1,15 @@
+<h1 class="fs-2">Departments</h1>
+<h2 class="fs-4"><a routerLink="/departments/create">Create</a></h2>
+<div>
+  @for(dept of depts;track dept._id){
+  <div>
+    {{ dept.name }}
+    <p class="d-flex gap-3">
+      <a routerLink="/departments/{{ dept._id }}">Details</a>
+      <a routerLink="/departments/update/{{ dept._id }}">Update</a>
+      <a routerLink="/departments/delete/{{ dept._id }}">Delete</a>
+    </p>
+  </div>
+  }
+</div>
+<router-outlet></router-outlet>
