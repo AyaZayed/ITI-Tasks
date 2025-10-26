@@ -11,7 +11,7 @@ import {
 export class CreateUserDto {
   @IsString()
   @IsNotEmpty()
-  username: string;
+  name: string;
 
   @IsStrongPassword({
     minLength: 8,

@@ -1,67 +1,54 @@
-import { Injectable } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
-import { User } from './entities/user.entity';
-import { UpdateUserDto } from './dto/update-user.dto';
+// import { UpdateUserDto } from './dto/update-user.dto';
+import { InjectModel } from '@nestjs/mongoose';
+import { User } from './schemas/user.schema';
+import { Model } from 'mongoose';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UsersService {
-  private users: User[] = [];
+  constructor(@InjectModel(User.name) private userModel: Model<User>) {}
 
-  getAll() {
-    return {
-      message: 'Users fetched successfully',
-      data: this.users,
-    };
+  async getUsers(): Promise<User[]> {
+    return await this.userModel.find().exec();
   }
 
-  create(body: CreateUserDto) {
-    const id = Date.now().toString();
-    this.users.push({ ...body, id });
-    return {
-      message: 'User created successfully',
-      data: { ...body, id },
-    };
-  }
-
-  getById(id: string) {
-    const user = this.users.find((u) => u.id === id);
+  async getUserById(id: string): Promise<User> {
+    const user = await this.userModel.findById(id);
     if (!user) {
-      return {
-        message: 'User not found',
-      };
+      throw new NotFoundException('User Not Found');
+    }
+    return user;
+  }
+
+  async createUser(body: CreateUserDto): Promise<User> {
+    const user = await this.userModel.findOne({ email: body.email });
+    if (user) {
+      throw new BadRequestException('User already exists');
     }
 
-    return {
-      message: 'User fetched succesfully',
-      data: user,
-    };
+    const hashedPass = await bcrypt.hash(body.password, 10);
+
+    return await this.userModel.create({
+      ...body,
+      password: hashedPass,
+      role: 'user',
+    });
   }
 
-  update(body: UpdateUserDto, id: string) {
-    const user = this.users.find((u) => u.id === id);
-    if (!user) {
-      return {
-        message: 'User not found',
-      };
-    }
-    const updatedUser = { ...user, ...body };
-    return {
-      message: 'User updated successfully',
-      data: updatedUser,
-    };
-  }
+  // updateUser(body: UpdateUserDto, id: string) {}
 
-  remove(id: string) {
-    const user = this.users.find((u) => u.id === id);
+  async getUserByEmail(email: string) {
+    const user = await this.userModel.findOne({ email });
     if (!user) {
-      return {
-        message: 'User not found',
-      };
+      throw new NotFoundException('User Not Found');
     }
-    this.users = this.users.filter((u) => u.id !== id);
-    return {
-      message: 'User deleted successfully',
-      data: user,
-    };
+    return user;
   }
+  // remove(id: string) {}
 }

@@ -9,7 +9,7 @@ import {
 
 export class UpdateUserDto {
   @IsString()
-  username?: string;
+  name?: string;
 
   @IsStrongPassword()
   password?: string;

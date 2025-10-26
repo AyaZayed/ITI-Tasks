@@ -1,52 +1,40 @@
 import {
   Controller,
   Get,
-  Post,
   Body,
-  UsePipes,
-  ValidationPipe,
   Param,
-  Put,
+  // Put,
+  UseInterceptors,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
-import { CreateUserDto } from './dto/create-user.dto';
-import { User } from './entities/user.entity';
-import { UpdateUserDto } from './dto/update-user.dto';
+// import { CreateUserDto } from './dto/create-user.dto';
+// import { UpdateUserDto } from './dto/update-user.dto';
+import { User } from './schemas/user.schema';
+import { TransformInterceptor } from './interceptors/transform.interceptor';
 
+@UseInterceptors(TransformInterceptor)
 @Controller('users')
 export class UsersController {
   constructor(private usersService: UsersService) {}
 
-  @Post()
-  @UsePipes(new ValidationPipe())
-  create(@Body() createUserDto: CreateUserDto): {
-    message: string;
-    data?: CreateUserDto;
-  } {
-    return this.usersService.create(createUserDto);
+  @Get('/')
+  async getAll(): Promise<User[]> {
+    return await this.usersService.getUsers();
   }
 
-  @Get()
-  getAll(): { message: string; data: User[] } {
-    return this.usersService.getAll();
+  @Get('/:id')
+  async getById(@Param('id') id: string): Promise<User> {
+    return await this.usersService.getUserById(id);
   }
 
-  @Get(':id')
-  getById(@Param('id') id: string): {
-    message: string;
-    data?: User | undefined;
-  } {
-    return this.usersService.getById(id);
-  }
-
-  @Put(':id')
-  update(
-    @Body() updateUserDto: UpdateUserDto,
-    @Param('id') id: string,
-  ): {
-    message: string;
-    data?: User | undefined;
-  } {
-    return this.usersService.update(updateUserDto, id);
-  }
+  // @Put(':id')
+  // update(
+  //   @Body() updateUserDto: UpdateUserDto,
+  //   @Param('id') id: string,
+  // ): {
+  //   message: string;
+  //   data?: User | undefined;
+  // } {
+  //   return this.usersService.update(updateUserDto, id);
+  // }
 }
