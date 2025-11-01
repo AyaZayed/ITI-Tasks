@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+:root {
+        --blue: #6CB7BD;
+        --orange: #F99645;
+        --light-blue: #F6FAFB;
+        --dark-blue: #191F1F;
+}
+
+@theme {
+        --color-blue: #6CB7BD;
+        --color-orange: #F99645;
+        --color-light-blue: #F6FAFB;
+        --color-dark-blue: #191F1F;
+        --font-sans: 'Segoe UI',
+                Tahoma,
+                Geneva,
+                Verdana,
+                sans-serif;
+}

@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+body {
+  /* background: url('https://plus.unsplash.com/premium_photo-1666998556443-d339285f7fcc?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzN8fHBhdHRlcm58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600') no-repeat center center/cover; */
+  background-image: linear-gradient(to top, #f2cbe7 0%, #bbceef 100%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 1rem;
+}
+
+.glass-page {
+  min-height: 100vh;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
