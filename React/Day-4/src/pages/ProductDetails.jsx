@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Loader from "../components/Loader";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../state/cartSlice";
 
 export default function ProductDetails() {
    const params = useParams();
    const { id } = params;
+
+   const dispatch = useDispatch();
 
    const [product, setProduct] = useState({});
    const [loading, setLoading] = useState(true);
@@ -41,8 +45,9 @@ export default function ProductDetails() {
                </p>
                <p>{product.description}</p>
                <button
-                  className="border-0 bg-primary text-white p-2 px-6 uppercase w-fit mt-4 
-               outline-[1.5px] outline-primary hover:bg-white hover:text-primary font-semibold transition-colors duration-300">
+                  className="cursor-pointer border-0 bg-primary text-white p-2 px-6 uppercase w-fit mt-4 
+               outline-[1.5px] outline-primary hover:bg-white hover:text-primary font-semibold transition-colors duration-300"
+                  onClick={() => dispatch(addToCart(product))}>
                   Add to Cart
                </button>
             </div>

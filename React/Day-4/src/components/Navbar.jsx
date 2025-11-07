@@ -1,9 +1,11 @@
 import { ShoppingBag } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router";
 
 export default function Navbar() {
    const [scrolled, setScrolled] = useState(false);
+   const cart = useSelector((state) => state.cart);
 
    useEffect(() => {
       const onScroll = () => setScrolled(window.scrollY > 50);
@@ -22,8 +24,11 @@ export default function Navbar() {
             </Link>
          </div>
          <div className="cart">
-            <Link to="/cart">
+            <Link to="/cart" className="relative">
                <ShoppingBag size={28} />
+               <span className="absolute -top-2 -right-2 p-2 py-0.5 rounded-full text-xs bg-red-500 text-white">
+                  {cart.quantity}
+               </span>
             </Link>
          </div>
       </header>
