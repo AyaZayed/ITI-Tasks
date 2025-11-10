@@ -11,6 +11,10 @@ export default function Navbar() {
          title: "Products",
          href: "/products",
       },
+      {
+         title: "Users",
+         href: "/users",
+      },
    ];
 
    const links2 = [

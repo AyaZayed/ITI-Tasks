@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins, Young_Serif } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 const poppinsSans = Poppins({
    subsets: ["latin"],
@@ -21,18 +19,16 @@ export const metadata: Metadata = {
    description: "Practice project",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
    children,
-}: Readonly<{
+}: {
    children: React.ReactNode;
-}>) {
+}) {
    return (
-      <html lang="en">
+      <html lang={"en"}>
          <body
-            className={`${poppinsSans.variable} ${youngSerif.variable} bg-background text-foreground font-sans antialiased  px-6 md:px-8`}>
-            <Navbar />
-            <main className="py-10">{children}</main>
-            <Footer />
+            className={`${poppinsSans.variable} ${youngSerif.variable} bg-background text-foreground font-sans antialiased px-6 md:px-8`}>
+            {children}
          </body>
       </html>
    );

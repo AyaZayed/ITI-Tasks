@@ -1,31 +1,9 @@
 import Product from "@/types/product";
 import Image from "next/image";
 
-export async function getProductById(id: string): Promise<Product> {
-   if (!id) throw new Error("Product ID is missing");
-
-   const res = await fetch(`https://fakestoreapi.com/products/${id}`, {
-      cache: "no-store",
-   });
-
-   if (!res.ok) {
-      throw new Error(`Failed to fetch product ${id}: ${res.statusText}`);
-   }
-
-   const data = await res.json().catch(() => {
-      throw new Error(`Invalid JSON returned for product ${id}`);
-   });
-
-   return data;
-}
-
-export default async function Page({
-   params,
-}: {
-   params: Promise<{ id: string }>;
-}) {
-   const { id } = await params;
-   const product = await getProductById(id);
+export default function ProductDetails({
+   product,
+}: Readonly<{ product: Product }>) {
    return (
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 min-h-[70vh]">
          <div className="border border-neutral-200 flex justify-center py-6 rounded-xl">

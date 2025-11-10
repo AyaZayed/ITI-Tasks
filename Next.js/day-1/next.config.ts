@@ -8,6 +8,15 @@ const nextConfig: NextConfig = {
             hostname: "fakestoreapi.com",
             pathname: "/img/**",
          },
+         {
+            protocol: "https",
+            hostname: "cdn.jsdelivr.net",
+            pathname: "/gh/faker-js/**",
+         },
+         {
+            protocol: "https",
+            hostname: "avatars.githubusercontent.com",
+         },
       ],
    },
 };
