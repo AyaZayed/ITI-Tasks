@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--color-white);
+  --color-foreground: var(--color-cyan-950);
+  --font-sans: var(--font-poppins-sans);
+  --font-serif: var(--font-young-serif);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+}
+
+::-moz-selection {
+  background-color: var(--color-fuchsia-600);
+  color: var(--color-white);
+}
+
+::selection {
+  background-color: var(--color-fuchsia-600);
+  color: var(--color-white);
+}
