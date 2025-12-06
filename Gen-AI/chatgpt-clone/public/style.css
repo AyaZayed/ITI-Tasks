@@ -163,3 +163,30 @@ header h1 {
         color: var(--secondary-color);
         font-style: italic;
 }
+
+.upload-container {
+        background: #f0f0f0;
+        padding: 20px 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+}
+
+.upload-status {
+        color: rgb(40, 162, 40);
+        font-weight: bold;
+        margin-left: auto;
+}
+
+.upload-btn {
+        background: var(--quinary-color);
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 15px;
+        transition: transform 0.2s;
+        margin-left: auto;
+}

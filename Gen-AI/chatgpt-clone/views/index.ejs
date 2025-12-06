@@ -3,41 +3,86 @@
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>ChatGPT Clone</title>
+      <title>ChatGPT RAG Clone</title>
       <link rel="stylesheet" href="/style.css" />
    </head>
    <body>
       <div class="container">
          <header>
-            <h1>ChatGPT Clone</h1>
-            <button id="clearBtn" class="clear-btn">Clear Chat</button>
+            <h1>Chat with File (RAG)</h1>
+            <form action="/clear" method="POST" style="display: inline">
+               <button
+                  type="submit"
+                  class="clear-btn"
+                  onclick="return confirm('Clear chat and file?')">
+                  Reset All
+               </button>
+            </form>
          </header>
+
+         <!-- FILE UPLOAD SECTION -->
+         <div class="upload-container">
+            <form
+               action="/upload"
+               method="POST"
+               enctype="multipart/form-data"
+               style="
+                  display: flex;
+                  gap: 10px;
+                  width: 100%;
+                  align-items: center;
+               ">
+               <!-- Inside your upload form -->
+               <input
+                  type="file"
+                  name="document"
+                  accept=".txt"
+                  required
+                  class="upload-input" />
+               <button type="submit" class="upload-btn">
+                  Upload Text File
+               </button>
+            </form>
+            <% if (typeof isFileUploaded !== 'undefined' && isFileUploaded) { %>
+            <span class="upload-status">✓ File Active</span>
+            <% } %>
+         </div>
 
          <div class="chat-container" id="chatContainer">
             <% if (messages.length === 0) { %>
             <div class="welcome-message">
-               <h2>Welcome to ChatGPT Clone!</h2>
-               <p>Start a conversation by typing a message below.</p>
+               <h2>RAG System Ready</h2>
+               <p>Upload a PDF above, then ask questions about it.</p>
             </div>
-            <% } else { %> <% messages.forEach(msg => { %>
+            <% } %> <% messages.forEach(msg => { %> <% if (msg.role !==
+            'system') { %>
+            <!-- Hide system messages usually -->
             <div class="message <%= msg.role %>">
                <div class="message-header">
                   <%= msg.role === 'user' ? 'You' : 'Assistant' %>
                </div>
                <div class="message-content"><%= msg.content %></div>
             </div>
-            <% }); %> <% } %>
+            <% } %> <% }); %> <% if (error) { %>
+            <div class="error-message"><%= error %></div>
+            <% } %>
          </div>
 
-         <div class="input-container">
-            <textarea
+         <form action="/chat" method="POST" class="input-container">
+            <input
+               type="text"
+               name="message"
+               placeholder="Ask about your file..."
                id="messageInput"
-               placeholder="Type your message here..."
-               rows="3"></textarea>
-            <button id="sendBtn" class="send-btn">Send</button>
-         </div>
+               required />
+            <button type="submit" class="send-btn">Send</button>
+         </form>
       </div>
 
-      <script src="/script.js"></script>
+      <!-- Auto-scroll to bottom -->
+      <script>
+         const container = document.getElementById("chatContainer");
+         container.scrollTop = container.scrollHeight;
+      </script>
    </body>
 </html>
