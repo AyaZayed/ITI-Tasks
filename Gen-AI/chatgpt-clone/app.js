@@ -122,46 +122,60 @@ app.post('/chat', async (req, res) => {
 
                 req.session.chatHistory.push({ role: 'user', content: message.trim() });
 
+                // --- 1. RAG: Retrieve Context from File ---
                 let context = "";
 
-                if (global.vectorStore.length > 0) {
-                        console.log("Searching Vector Store...");
-                        const queryVector = await getEmbedding(message);
-                        const relevantChunks = retrieveRelevantChunks(queryVector, global.vectorStore);
-                        context = relevantChunks.map(c => c.content).join("\n\n---\n\n");
+                if (global.vectorStore && global.vectorStore.length > 0) {
+                        console.log("Searching file for context...");
+                        try {
+                                // Generate embedding for the question
+                                const queryVector = await getEmbedding(message);
+
+                                // Find top 3 similar chunks
+                                const relevantChunks = retrieveRelevantChunks(queryVector, global.vectorStore);
+
+                                // Combine them into text
+                                context = relevantChunks.map(c => c.content).join("\n\n---\n\n");
+                                console.log("Context found!");
+                        } catch (err) {
+                                console.error("Retrieval failed:", err);
+                        }
                 }
+                // ------------------------------------------
 
-                const messagesForAI = [
-                        {
-                                role: "system",
-                                content: "You are a helpful assistant. Use the provided Context to answer the user's question. If the answer is not in the context, say you don't know based on the file."
-                        },
-                        ...req.session.chatHistory
-                ];
+                // --- 2. Send Message + Context to n8n ---
+                console.log("Sending to n8n...");
 
-                if (context) {
-                        messagesForAI[messagesForAI.length - 1] = {
-                                role: "user",
-                                content: `Context:\n${context}\n\nQuestion:\n${message}`
-                        };
-                }
-
-                const completion = await openai.chat.completions.create({
-                        model: 'gpt-4o-mini',
-                        messages: messagesForAI,
-                        temperature: 0.7,
+                const n8nResponse = await fetch(process.env.N8N_WEBHOOK_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                                message: message,   // The User's Question
+                                context: context    // The File Content (if any)
+                        })
                 });
+
+                if (!n8nResponse.ok) throw new Error(`n8n Status: ${n8nResponse.status}`);
+
+                const data = await n8nResponse.json();
+                const assistantMessage = data.reply || "Sorry, I couldn't get a response.";
 
                 req.session.chatHistory.push({
                         role: 'assistant',
-                        content: completion.choices[0].message.content
+                        content: assistantMessage
                 });
 
-                res.redirect('/');
+                req.session.save(() => {
+                        res.redirect('/');
+                });
 
         } catch (error) {
                 console.error('Chat Error:', error);
-                res.redirect('/');
+                res.render('index', {
+                        messages: req.session.chatHistory,
+                        isFileUploaded: global.vectorStore.length > 0,
+                        error: 'Error: ' + error.message
+                });
         }
 });
 
